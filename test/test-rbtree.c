@@ -1,5 +1,5 @@
 #include <assert.h>
-#include <rbtree.h>
+#include "rbtree.h"
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -358,7 +358,7 @@ void test_find_erase_rand(const size_t n, const unsigned int seed) {
   rbtree *t = new_rbtree();
   key_t *arr = calloc(n, sizeof(key_t));
   for (int i = 0; i < n; i++) {
-    arr[i] = rand();
+    arr[i] = rand(); 
   }
 
   test_find_erase(t, arr, n);
@@ -368,16 +368,27 @@ void test_find_erase_rand(const size_t n, const unsigned int seed) {
 }
 
 int main(void) {
+  printf("Starting test_init...\n");
   test_init();
+  printf("Finished test_init...\n");
   test_insert_single(1024);
+  printf("Finished test_insert_single...\n");
   test_find_single(512, 1024);
+  printf("Finished test_find_single...\n");
   test_erase_root(128);
+  printf("Finished test_erase_root...\n");
   test_find_erase_fixed();
+  printf("Finished test_find_erase_fixed...\n");
   test_minmax_suite();
+  printf("Finished test_minmax_suite...\n");
   test_to_array_suite();
+  printf("Finished test_to_array_suite...\n");
   test_distinct_values();
+  printf("Finished test_distinct_values...\n");
   test_duplicate_values();
+  printf("Finished test_duplicate_values...\n");
   test_multi_instance();
+  printf("Finished test_multi_instance...\n");
   test_find_erase_rand(10000, 17);
   printf("Passed all tests!\n");
 }

@@ -1,5 +1,6 @@
 #ifndef _RBTREE_H_
 #define _RBTREE_H_
+#define SENTINEL
 
 #include <stddef.h>
 
@@ -23,6 +24,10 @@ typedef struct //tree 자체를 나타내는 구조체
 
 rbtree *new_rbtree(void);
 void delete_rbtree(rbtree *);
+
+// 추가된 함수 선언
+void free_node(rbtree *t, node_t *node);
+void rbtree_insert_fixup(rbtree *t, node_t *node);
 
 node_t *rbtree_insert(rbtree *, const key_t);
 node_t *rbtree_find(const rbtree *, const key_t);
