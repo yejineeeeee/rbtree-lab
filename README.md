@@ -1,6 +1,6 @@
 # RB Tree 프로젝트
 
-C 언어를 사용하여 RB Tree를 구현하는 프로젝트입니다.
+C 언어의 포인터를 사용하여 RB Tree를 구현하는 프로젝트입니다.
 
 [1. RBTREE란?](https://yejineeee.tistory.com/57)
 
